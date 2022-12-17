@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}Cadastro{% endblock 'titulo' %}
+
+{% block 'conteudo' %}
+{% include 'menu.html' %}
+<div class="container">
+    <br>
+    {% if status == '0'%}
+        <div class="alert alert-success" role="alert">
+            Cadastro feito com sucesso
+        </div>
+    {% endif %}
+    
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            Nome ou email não podem estar vazio
+        </div>
+    {% endif %}
+    {% if status == '2'%}
+        <div class="alert alert-danger" role="alert">
+            Usuário já está cadastrado
+        </div>
+    {% endif %}
+    
+    {% if status == '3'%}
+        <div class="alert alert-danger" role="alert">
+            O nome deve ter mais de 3 digitos
+        </div>
+    {% endif %}
+    
+    {% if status == '4'%}
+        <div class="alert alert-danger" role="alert">
+            O nome não pode ter números
+        </div>
+    {% endif %}
+    {% if status == '5'%}
+        <div class="alert alert-danger" role="alert">
+            Cpf deve ter 11 digitos
+        </div>
+    {% endif %}
+    {% if status == '6'%}
+        <div class="alert alert-danger" role="alert">
+            Rg deve ter 7 digitos
+        </div>
+    {% endif %}
+    {% if status == '7'%}
+        <div class="alert alert-danger" role="alert">
+            Endereço deve ter no mínimo 5 digitos
+        </div>
+    {% endif %}
+    {% if status == '8'%}
+        <div class="alert alert-danger" role="alert">
+            O email deve possuir @
+        </div>
+    {% endif %}
+    {% if status == '9'%}
+        <div class="alert alert-danger" role="alert">
+            Senha deve ter mais de 8 digitos
+        </div>
+    {% endif %}
+    {% if status == '10'%}
+        <div class="alert alert-danger" role="alert">
+            Erro no sistema
+        </div>
+    {% endif %}
+    <br>
+    <div class="row">
+        <br>
+    <div class="col-md-3">
+        
+    </div>
+
+    <div class="col-md-6">
+        <h1>Cadastro de Usuários</h1>
+        <hr>
+
+        <form method="POST" action= {% url 'valida_cadastro' %}>{% csrf_token %}
+            <label for="">Nome</label>
+            <input class="form-control" type="text" name="nome" id="" placeholder="Digite seu nome">
+            <br>
+            <label for="">Cpf</label>
+            <input class="form-control" type="number" name="cpf" id="" placeholder="Digite seu cpf">
+            <br>
+            <label for="">RG</label>
+            <input class="form-control" type="number" name="rg" id="" placeholder="Digite seu RG">
+            <br>
+            <label for="">Email</label>
+            <input class="form-control" type="email" name="email" id="" placeholder="Digite seu email">
+            <br>
+            <label for="">Endereço</label>
+            <input class="form-control" type="text" name="endereco" id="" placeholder="Digite seu endereço">
+            <br>
+            <label for="">Contato</label>
+            <input class="form-control" type="tel" name="telefone" id="" placeholder="Digite seu telefone">
+            <br>
+            <label for="">Turno</label>
+            <select class="form-control" name="turno" id="">
+                <option disabled value="">Defina o turno</option>
+                <option value="Manhã">Manhã</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Integral">Integral</option>
+            </select>
+            <br>
+            <label for="">Departamento</label>
+            <select class="form-control" name="departamento" id="">
+                <option disabled value="">Defina o Departamento</option>
+                <option value="Coordenação">Coordenação</option>
+                <option value="Professor">Professor</option>
+                <option value="Aluno">Aluno</option>
+            </select>
+            <br>
+            <label for="">Senha</label>
+            <input class="form-control" type="password" name="senha" id="" placeholder="Digite sua senha">
+            <br>
+            <label for="">Confirme sua senha</label>
+            <input class="form-control" type="password" name="confirm-senha" id="" placeholder="Confirme sua senha">
+            <br>
+            <input class="btn btn-warning" type="submit" value="Cadastrar">
+            <br>
+        </form>
+    </div>
+
+    <div class="col-md-3">
+        
+    </div>
+    </div>
+</div>
+
+
+{% endblock 'conteudo' %}

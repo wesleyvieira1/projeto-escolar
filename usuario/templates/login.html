@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}Login{% endblock 'titulo' %}
+{% block 'conteudo' %}
+
+<div class="container">
+    <br>
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            Cpf ou senha inválidos
+        </div>
+    {% endif %}
+    {% if status == '2'%}
+        <div class="alert alert-danger" role="alert">
+            Você precisa fazer login para acessar o sistema
+        </div>
+    {% endif %}
+    <div class="row">
+        <br>
+    <div class="col-md-3">
+        
+    </div>
+
+    <div class="col-md-6">
+        <h1>Login</h1>
+        <hr>
+
+        <form method="POST" action= {% url 'valida_login' %}>{% csrf_token %}
+            <label for="">Cpf</label>
+            <input class="form-control" type="number" name="cpf" id="" placeholder="Digite seu cpf">
+            <br>
+            <label for="">Senha</label>
+            <input class="form-control" type="password" name="senha" id="" placeholder="Digite sua senha">
+            <br>
+            <input class="btn btn-warning" type="submit" value="Entrar">
+            <br>
+        </form>
+    </div>
+
+    <div class="col-md-3">
+        
+    </div>
+    </div>
+</div>
+
+
+{% endblock 'conteudo' %}
+

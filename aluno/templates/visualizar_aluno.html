@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}{{aluno.nome}}{% endblock 'titulo' %}
+
+{% block 'conteudo' %}
+{% include 'menu.html' %}
+<div class="container">
+    <br>
+    <h5>Dados do Aluno</h5>
+    <hr>
+    <h6>Nome:</h6><p>{{aluno.nome}}</p>
+    <h6>Rg:</h6><p>{{aluno.rg}}</p>
+    <h6>CPF:</h6><p>{{aluno.cpf}}</p>
+    <h6>Email:</h6><p>{{aluno.email}}</p>
+    <h6>Telefone:</h6><p>{{aluno.contato}}</p>
+    <h6>Endereço:</h6><p>{{aluno.endereco}}</p>
+    <h6>Turno:</h6><p>{{aluno.turno}}</p>
+</div>
+
+{% endblock 'conteudo' %}
