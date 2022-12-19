@@ -78,6 +78,10 @@ def valida_login(request):
 
     return HttpResponse(f'{cpf},{senha}')
 
+def listagem(request):
+    usuarios = Usuario.objects.all().order_by('nome')
+    return render(request, 'listagem.html', {'usuarios':usuarios})
+
 def sair(request):
     request.session.flush()
     return redirect('/auth/login/')
