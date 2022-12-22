@@ -1,31 +1,73 @@
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Sistema Escolar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+{% extends 'base.html' %}
+{% block 'conteudo' %}
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url '' %}">Sistema Escolar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="{% url '' %}offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Olá User</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'home' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url '' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'aluno.cadastro' %}">Cadastrar Aluno</a>
+            <a class="nav-link" href="{% url '' %}">Link</a>
+          </li>
+          <!--
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url '' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="{% url '' %}">Action</a></li>
+              <li><a class="dropdown-item" href="{% url '' %}">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="{% url '' %}">Something else here</a></li>
+            </ul>
+          </li>
+          -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cadastro' %}">Cadastro de Usuário</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'aluno.listagem' %}">Listar Aluno</a>
+            <a class="nav-link" href="{% url 'listagem' %}">Listagem de Usuários</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'cadastro' %}">Cadastrar Usuário</a>
+            <a class="nav-link" href="{% url 'aluno.cadastro' %}">Cadastro de Alunos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'listagem' %}">Listar Usuário</a>
+            <a class="nav-link" href="{% url 'aluno.listagem' %}">Listagem de Alunos</a>
           </li>
-        
           <li class="nav-item">
-            <a class="nav-link active bt btn-danger" aria-current="page" href="{%url 'sair' %}">Sair</a>
+            <a class="nav-link" href="{% url '' %}">Cadastro de Professores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url '' %}">Listagem de Professores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url '' %}">Cadastro de Mensalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url '' %}">Listagem de Mensalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url '' %}">Cadastro de Turma</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url '' %}">Listagem de Turma</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+{% endblock 'conteudo' %}
+
