@@ -101,6 +101,13 @@
                 <option value="Integral">Integral</option>
             </select>
             <br>
+            <form action="{% url 'aluno.listagem' %}" method="post">
+                {% csrf_token %}
+                {% for aluno in alunos %}
+                     <input type="checkbox" name="resp" id="" value="{{aluno.Aluno}}">checkbox<br>
+                  
+                {% endfor %}
+            </form>
             <input class="btn btn-warning" type="submit" value="Cadastrar">
             <br>
         </form>
