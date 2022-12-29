@@ -3,7 +3,7 @@
 {% block 'titulo' %}Cadastro de Aluno{% endblock 'titulo' %}
 
 {% block 'conteudo' %}
-{% include 'menu.html' %}
+
 <div class="container">
     {% if status == '0'%}
         <div class="alert alert-success" role="alert">
@@ -78,50 +78,50 @@
             <hr>
             <div class="col-md-12">
                 <label for="">Nome</label>
-                <input class="form-control" type="text" name="nome" id="" placeholder="Digite nome">
+                <input class="form-control" type="text" name="nome_prof" id="" placeholder="Digite nome">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">Cpf</label>
-                <input class="form-control" type="number" name="cpf" id="" placeholder="Digite cpf">
+                <input class="form-control" type="number" name="cpf_prof" id="" placeholder="Digite cpf">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">RG</label>
-                <input class="form-control" type="number" name="rg" id="" placeholder="Digite RG">
+                <input class="form-control" type="number" name="rg_prof" id="" placeholder="Digite RG">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">Email</label>
-                <input class="form-control" type="email" name="email" id="" placeholder="Digite  email">
+                <input class="form-control" type="email" name="email_prof" id="" placeholder="Digite  email">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">Contato</label>
-                <input class="form-control" type="tel" name="telefone" id="" placeholder="Digite telefone">
+                <input class="form-control" type="tel" name="telefone_prof" id="" placeholder="Digite telefone">
             </div>
             <div class="col-md-6">
                 <label for="">Endereço</label>
-                <input class="form-control" type="text" name="endereco" id="" placeholder="Digite endereço">
+                <input class="form-control" type="text" name="endereco_prof" id="" placeholder="Digite endereço">
             </div>
             <div class="col-md-6">
                 <label for="">Formação</label>
-                <input class="form-control" type="text" name="formacao" id="" placeholder="Digite a formação">
+                <input class="form-control" type="text" name="formacao_prof" id="" placeholder="Digite a formação">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">Data de Nascimento</label>
-                <input class="form-control" type="date" name="data_nascimento" id="">
+                <input class="form-control" type="date" name="data_nascimento_prof" id="">
             </div>
             <br>
             <div class="col-md-6">
                 <label for="">Data de Entrada</label>
-                <input class="form-control" type="date" name="data_entrada" id="">
+                <input class="form-control" type="date" name="data_entrada_prof" id="">
             </div>
             <br>
             <div class="col-md-4">
                 <label for="">Turno</label>
-                <select class="form-control" name="turno" id="">
+                <select class="form-control" name="turno_prof" id="">
                     <option selected disabled>Defina o turno</option>
                     <option value="Manhã">Manhã</option>
                     <option value="Tarde">Tarde</option>
@@ -131,7 +131,7 @@
 
             <div class="col-md-4">
                 <label for="">Raça</label>
-                <select class="form-control" name="raca" id="">
+                <select class="form-control" name="raca_prof" id="">
                     <option selected disabled>Defina Raça</option>
                     <option value="Branca">Branca</option>
                     <option value="Preta">Preta</option>
@@ -143,7 +143,7 @@
             <br>
             <div class="col-md-4">
                 <label for="">Sexo</label>
-                <select class="form-control" name="sexo" id="">
+                <select class="form-control" name="sexo_prof" id="">
                     <option selected disabled>Defina sexo</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Masculino">Masculino</option>

@@ -3,7 +3,7 @@
 {% block 'titulo' %}Cadastro de Aluno{% endblock 'titulo' %}
 
 {% block 'conteudo' %}
-{% include 'menu.html' %}
+
 <div class="container">
     {% if status == '0'%}
         <div class="alert alert-success" role="alert">
@@ -76,38 +76,55 @@
 
         <form method="POST" action= {% url 'aluno.valida' %}>{% csrf_token %}
             <label for="">Nome</label>
-            <input class="form-control" type="text" name="nome" id="" placeholder="Digite seu nome">
+            <input class="form-control" type="text" name="nome_aluno" id="" placeholder="Digite seu nome">
             <br>
             <label for="">Cpf</label>
-            <input class="form-control" type="number" name="cpf" id="" placeholder="Digite seu cpf">
+            <input class="form-control" type="number" name="cpf_aluno" id="" placeholder="Digite seu cpf">
             <br>
             <label for="">RG</label>
-            <input class="form-control" type="number" name="rg" id="" placeholder="Digite seu RG">
+            <input class="form-control" type="number" name="rg_aluno" id="" placeholder="Digite seu RG">
             <br>
             <label for="">Email</label>
-            <input class="form-control" type="email" name="email" id="" placeholder="Digite seu email">
+            <input class="form-control" type="email" name="email_aluno" id="" placeholder="Digite seu email">
             <br>
             <label for="">Endereço</label>
-            <input class="form-control" type="text" name="endereco" id="" placeholder="Digite seu endereço">
+            <input class="form-control" type="text" name="endereco_aluno" id="" placeholder="Digite seu endereço">
             <br>
             <label for="">Contato</label>
-            <input class="form-control" type="tel" name="telefone" id="" placeholder="Digite seu telefone">
+            <input class="form-control" type="tel" name="contato_aluno" id="" placeholder="Digite seu telefone">
             <br>
             <label for="">Turno</label>
-            <select class="form-control" name="turno" id="">
+            <select class="form-control" name="turno_aluno" id="">
                 <option disabled value="">Defina o turno</option>
                 <option value="Manhã">Manhã</option>
                 <option value="Tarde">Tarde</option>
                 <option value="Integral">Integral</option>
             </select>
             <br>
-            <form action="{% url 'aluno.listagem' %}" method="post">
-                {% csrf_token %}
-                {% for aluno in alunos %}
-                     <input type="checkbox" name="resp" id="" value="{{aluno.Aluno}}">checkbox<br>
-                  
-                {% endfor %}
-            </form>
+            <label for="">Data Nascimento</label>
+            <input type="date" name="data_nascimento_aluno" id="">
+            <br>
+            <label for="">Data Entrada</label>
+            <input type="date" name="data_entrada_aluno" id="">
+            <br>
+            <label for="">Raça</label>
+            <select class="form-control" name="raca_aluno" id="">
+                <option selected disabled>Defina Raça</option>
+                <option value="Branca">Branca</option>
+                <option value="Preta">Preta</option>
+                <option value="Parda">Parda</option>
+                <option value="Não declarada">Não declarada</option>
+                <option value="Outra">Outra</option>
+            </select>
+            <br>
+            <label for="">Sexo</label>
+            <select class="form-control" name="sexo_aluno" id="">
+                <option selected disabled>Defina sexo</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Outro">Outro</option>
+                    
+            </select>
             <input class="btn btn-warning" type="submit" value="Cadastrar">
             <br>
         </form>

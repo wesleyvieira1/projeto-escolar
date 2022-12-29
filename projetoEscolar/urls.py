@@ -6,8 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('auth/', include('usuario.urls')),
-    path('aluno/', include('aluno.urls')),
+    path('academico/', include('academico.urls')),
     path('boletim/', include('boletim.urls')),
-    path('professor/', include('professor.urls'))
-
+    #path('turma/', include('turma.urls'))
 ]

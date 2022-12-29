@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}Cadastro de Turma{% endblock 'titulo' %}
+
+{% block 'conteudo' %}
+
+<div class="container">
+    {% if status == '0'%}
+        <div class="alert alert-success" role="alert">
+            Cadastro feito com sucesso
+        </div>
+    {% endif %}
+    
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            Nome ou email não podem estar vazio
+        </div>
+    {% endif %}
+    {% if status == '2'%}
+        <div class="alert alert-danger" role="alert">
+            Usuário já está cadastrado
+        </div>
+    {% endif %}
+    
+    {% if status == '3'%}
+        <div class="alert alert-danger" role="alert">
+            O nome deve ter mais de 3 digitos
+        </div>
+    {% endif %}
+    
+    {% if status == '4'%}
+        <div class="alert alert-danger" role="alert">
+            O nome não pode ter números
+        </div>
+    {% endif %}
+    {% if status == '5'%}
+        <div class="alert alert-danger" role="alert">
+            Cpf deve ter 11 digitos
+        </div>
+    {% endif %}
+    {% if status == '6'%}
+        <div class="alert alert-danger" role="alert">
+            Rg deve ter 7 digitos
+        </div>
+    {% endif %}
+    {% if status == '7'%}
+        <div class="alert alert-danger" role="alert">
+            Endereço deve ter no mínimo 5 digitos
+        </div>
+    {% endif %}
+    {% if status == '8'%}
+        <div class="alert alert-danger" role="alert">
+            O email deve possuir @
+        </div>
+    {% endif %}
+    {% if status == '9'%}
+        <div class="alert alert-danger" role="alert">
+            Senha deve ter mais de 8 digitos
+        </div>
+    {% endif %}
+    {% if status == '10'%}
+        <div class="alert alert-danger" role="alert">
+            Erro no sistema
+        </div>
+    {% endif %}
+    <br>
+    <div class="row">
+        <br>
+    <div class="col-md-3">
+        
+    </div>
+    <br>
+    <br>
+    <div class="col-md-12">
+
+        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action= {% url 'turma.valida' %}>{% csrf_token %}
+            <h1>Cadastro de Turmas</h1>
+            <hr>
+            <div class="col-md-12">
+                <label for="">Ano</label>
+                <select class="form-control" name="ano_turma" id="">
+                    <option selected disabled>Defina o ano</option>
+                    <option value="1">1º ano</option>
+                    <option value="2">2º ano</option>
+                    <option value="3">3º ano</option>
+                    <option value="4">4º ano</option>
+                    <option value="5">5º ano</option>
+                    <option value="6">6º ano</option>
+                    <option value="7">7º ano</option>
+                    <option value="8">8º ano</option>
+                    <option value="9">9º ano</option>
+                </select>
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="">Horário de Início</label>
+                <input class="form-control" type="time" name="hrI_turma" id="">
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label for="">Horário de Fim</label>
+                <input class="form-control" type="time" name="hrF_turma" id="">
+            </div>
+            <br>
+            <div class="col-md-4">
+                <label for="">Etapa</label>
+                <select class="form-control" name="etapa_turma" id="">
+                    <option selected disabled>Defina a etapa</option>
+                    <option value="F1">Fundamental I</option>
+                    <option value="F2">Fundamental II</option>
+                    <option value="EM">Ensino Médio</option>
+                </select>
+            </div>
+            <br>
+            <div class="col-md-4">
+                <label for="">Disciplina</label>
+                <select class="form-control" name="disciplina_turma" id="">
+                    <option selected disabled>Defina a disciplina</option>
+                    {% for dis in dicipls  %}
+                    <option value="{{dis.id}}">{{dis.nome_disciplina}}</option>
+                      
+                    {% endfor %}
+                    
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="">Dia da Semana</label>
+                <select class="form-control" name="dia_turma" id="">
+                    <option selected disabled>Defina o dia</option>
+                    <option value="Segunda">Segunda</option>
+                    <option value="Terça">Terça</option>
+                    <option value="Quarta">Quarta</option>
+                    <option value="Quinta">Quinta</option>
+                    <option value="Sexta">Sexta</option>
+                </select>
+            </div>
+            <br>
+            <input class="btn btn-warning" type="submit" value="Cadastrar">
+            <br>
+        </form>
+    </div>
+
+    <div class="col-md-3">
+        
+    </div>
+    </div>
+</div>
+
+
+{% endblock 'conteudo' %}
