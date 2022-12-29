@@ -15,4 +15,4 @@ class Aluno(models.Model):
     sexo_aluno = models.CharField(max_length=50)
     
     def __str__(self) -> str:
-        return self.nome_aluno
+        return str(self.nome_aluno)

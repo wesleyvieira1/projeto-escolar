@@ -1,6 +1,8 @@
 from django.db import models
+from aluno.models import Aluno
 
 class Boletim(models.Model):
+    nome_aluno_boletim = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     nota1b1 = models.IntegerField()
     nota2b1 = models.IntegerField()
     nota3b1 = models.IntegerField()
@@ -28,4 +30,4 @@ class Boletim(models.Model):
     mediafinal = models.IntegerField()
 
     def __str__(self) -> str:
-        return self.media1, self.media2, self.media3, self.media4
+        return str(self.nome_aluno_boletim)

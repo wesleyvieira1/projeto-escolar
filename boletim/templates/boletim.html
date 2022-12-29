@@ -18,57 +18,71 @@
         </div>
     {% endif %}
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
 
-        <div class="col-md-12">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <form method="POST" action= {% url 'boletim.valida' %}>{% csrf_token %}
-                    <h4>1º Bimestre</h4>
-                    <hr>
-                    <input type="number" name="1nota1" id="" placeholder="1º Nota">
-                    <input type="number" name="2nota1" id="" placeholder="2º Nota">
-                    <input type="number" name="3nota1" id="" placeholder="3º Nota">
-                    <input type="number" name="b1" id="" placeholder="Bimestral">
-                    <input type="number" name="m1" id="" placeholder="Média">
+        <div class="col-md-8">
+            <br>
+            <br>
+            <br>
+                  <form class="row g-10" method="POST" action= {% url 'boletim.valida' %}>{% csrf_token %}
+                    <div class="col-md-6 mb-5">
+                        <label for="">Nome Aluno</label>
+                        <select class="form-control" name="nome_aluno_boletim" id="">
+                            <option value="selected" disabled selected>Selecione o nome do Aluno</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <label for="">Média Final</label>
+                        <input class="form-control" type="number" name="mediafinal" id="" placeholder="Média Final">
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="p-2">1º Bimestre</h4>
+                        <hr>
+                        <input class="form-control" type="number" name="1nota1" id="" placeholder="1º Nota">
+                        <input class="form-control" type="number" name="2nota1" id="" placeholder="2º Nota">
+                        <input class="form-control" type="number" name="3nota1" id="" placeholder="3º Nota">
+                        <input class="form-control" type="number" name="b1" id="" placeholder="Bimestral">
+                        <input class="form-control" type="number" name="m1" id="" placeholder="Média">
+                    </div>
                     <br>
                     <br>
-                    <h4>2º Bimestre</h4>
-                    <hr>
-                    <input type="number" name="1nota2" id="" placeholder="1º Nota">
-                    <input type="number" name="2nota2" id="" placeholder="2º Nota">
-                    <input type="number" name="3nota2" id="" placeholder="3º Nota">
-                    <input type="number" name="b2" id="" placeholder="Bimestral">
-                    <input type="number" name="m2" id="" placeholder="Média">
+                    <div class="col-md-3 p-30">
+                        <h4 class="p-2">2º Bimestre</h4>
+                        <hr>
+                        <input class="form-control" type="number" name="1nota2" id="" placeholder="1º Nota">
+                        <input class="form-control" type="number" name="2nota2" id="" placeholder="2º Nota">
+                        <input class="form-control" type="number" name="3nota2" id="" placeholder="3º Nota">
+                        <input class="form-control" type="number" name="b2" id="" placeholder="Bimestral">
+                        <input class="form-control" type="number" name="m2" id="" placeholder="Média">
+                    </div>
                     <br>
                     <br>
-                    <h4>3º Bimestre</h4>
-                    <hr>
-                    <input type="number" name="1nota3" id="" placeholder="1º Nota">
-                    <input type="number" name="2nota3" id="" placeholder="2º Nota">
-                    <input type="number" name="3nota3" id="" placeholder="3º Nota">
-                    <input type="number" name="b3" id="" placeholder="Bimestral">
-                    <input type="number" name="m3" id="" placeholder="Média">
+                    <div class="col-md-3 p-30">
+                        <h4 class="p-2">3º Bimestre</h4>
+                        <hr>
+                        <input class="form-control" type="number" name="1nota3" id="" placeholder="1º Nota">
+                        <input class="form-control" type="number" name="2nota3" id="" placeholder="2º Nota">
+                        <input class="form-control" type="number" name="3nota3" id="" placeholder="3º Nota">
+                        <input class="form-control" type="number" name="b3" id="" placeholder="Bimestral">
+                        <input class="form-control" type="number" name="m3" id="" placeholder="Média">
+                    </div>
                     <br>
                     <br>
-                    <h4>4º Bimestre</h4>
-                    <hr>
-                    <input type="number" name="1nota4" id="" placeholder="1º Nota">
-                    <input type="number" name="2nota5" id="" placeholder="2º Nota">
-                    <input type="number" name="3nota6" id="" placeholder="3º Nota">
-                    <input type="number" name="b6" id="" placeholder="Bimestral">
-                    <input type="number" name="m6" id="" placeholder="Média">
-                    <br>
-                    <br>
-                    <input type="number" name="mediafinal" id="" placeholder="Média Final">
-                    <br>
-                    <br>
-                    <input class="btn btn-warning" type="submit" value="Salvar">
+                    <div class="col-md-3">
+                        <h4 class="p-2">4º Bimestre</h4>
+                        <hr>
+                        <input class="form-control" type="number" name="1nota4" id="" placeholder="1º Nota">
+                        <input class="form-control" type="number" name="2nota5" id="" placeholder="2º Nota">
+                        <input class="form-control" type="number" name="3nota6" id="" placeholder="3º Nota">
+                        <input class="form-control" type="number" name="b6" id="" placeholder="Bimestral">
+                        <input class="form-control" type="number" name="m6" id="" placeholder="Média">
+                    </div>
+                    <input class="btn btn-warning g-5" type="submit" value="Salvar">
                   </form>
                 </div>
             </div>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
 </div>
 
 
