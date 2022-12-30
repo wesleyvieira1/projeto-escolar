@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse
 from .models import Usuario
 from django.shortcuts import redirect
 from hashlib import sha256
+from django.contrib.auth.models import User
+from django.contrib import auth
 
-def login(request):
-    status = request.GET.get('status')
-    return render(request,'login.html', {'status':status})
 
 def cadastro(request):
     status = request.GET.get('status')
@@ -25,7 +25,10 @@ def valida_cadastro(request):
     confirm_senha = request.POST.get('confirm-senha')
 
     usuario = Usuario.objects.filter(email=email).filter(cpf=cpf)
-    
+    user = User.objects.filter(email=email)
+    if user.exists():
+        return redirect('/auth/cadastro/?status=1')
+
     if len(nome.strip())==0 or len(email.strip())==0:
         return redirect('/auth/cadastro/?status=1')
 
@@ -53,17 +56,36 @@ def valida_cadastro(request):
     if len(senha)<8:
         return redirect('/auth/cadastro/?status=9')
 
+    
+
     try:
         senha = sha256(senha.encode()).hexdigest()
+        user = User.objects.create_user(username=cpf,email=email,password=senha,first_name=nome)
         usuario = Usuario(nome=nome, cpf=cpf,rg=rg, email=email, endereco=endereco,contato=contato, departamento=departamento, senha=senha, confirm_senha=confirm_senha)
         usuario.save()
+        user.save()
         return redirect('/auth/cadastro/?status=0')
     except:
         return redirect('/auth/cadastro/?status=10')
 
+def login(request):
+    status = request.GET.get('status')
+    return render(request,'login.html', {'status':status})
 
 def valida_login(request):
-    cpf = request.POST.get('cpf')
+    if request.method=="GET":
+        if request.user.is_authenticated:
+            return redirect(reverse('home'))
+        return render(request,'login.html')
+    elif request.method=="POST":
+        cpf = request.POST.get('cpf')
+        senha = request.POST.get('senha')
+        user = auth.authenticate(username=cpf,password=senha)
+        if not user:
+            return redirect('/auth/login/?status=1')
+        auth.login(request,user)
+        return redirect('home')
+    '''cpf = request.POST.get('cpf')
     senha = request.POST.get('senha')
 
     senha = sha256(senha.encode()).hexdigest()  
@@ -76,7 +98,7 @@ def valida_login(request):
         request.session['usuario'] = usuario[0].id
         return redirect('/home/')
 
-    return HttpResponse(f'{cpf},{senha}')
+    return HttpResponse(f'{cpf},{senha}')'''
 
 def listagem(request):
     usuarios = Usuario.objects.all().order_by('nome')

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block 'conteudo' %}
+<form method="POST" class="table" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form.as_p}}
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</buttton>
+</form>
+{% endblock 'conteudo' %}

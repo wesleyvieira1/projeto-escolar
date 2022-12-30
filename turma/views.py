@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import Turma
 from disciplina.models import Disciplina
+from aluno.models import Aluno
 
 def cadastroTurma(request):
     status = request.GET.get('status')
     dicipls = Disciplina.objects.all()
-    return render(request, 'cadastro_turma.html', {'status':status, 'dicipls':dicipls})
+    alus = Aluno.objects.all() 
+    return render(request, 'cadastro_turma.html', {'status':status, 'dicipls':dicipls,'alus':alus})
 
 def validaCadastroTurma(request):
     ano_turma = request.POST.get('ano_turma')

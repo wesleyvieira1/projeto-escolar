@@ -25,7 +25,8 @@
         <h1>Login</h1>
         <hr>
 
-        <form method="POST" action= {% url 'valida_login' %}>{% csrf_token %}
+        <form method="POST" action= {% url 'valida_login' %}>
+            {% csrf_token %}
             <label for="">Cpf</label>
             <input class="form-control" type="number" name="cpf" id="" placeholder="Digite seu cpf">
             <br>

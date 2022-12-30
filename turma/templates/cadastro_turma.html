@@ -134,6 +134,12 @@
                     <option value="Sexta">Sexta</option>
                 </select>
             </div>
+            <div class="col-md-12">
+                {% for alu in alus %}
+                <label for="">{{alu.nome_aluno}}</label>
+                <input type="checkbox" name="aluno_turma" id="" value="{{alu.id}}">
+                {% endfor %}
+            </div>
             <br>
             <input class="btn btn-warning" type="submit" value="Cadastrar">
             <br>

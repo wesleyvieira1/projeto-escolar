@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block 'conteudo' %}
+<form method="POST">
+    {% csrf_token %}
+    <h3>Quer deletar {{object}}?</h3>
+    <input type="submit" value="Excluir"></input>
+    <button onclick="window.history.back();" type="button">Cancelar</button>
+</form>
+{% endblock 'conteudo' %}
