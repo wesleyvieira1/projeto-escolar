@@ -75,13 +75,8 @@
         <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action= {% url 'disciplina.valida' %}>{% csrf_token %}
             <input class="form-control" type="text" name="nome_disciplina" id="" placeholder="Digite o nome da disciplina">
             <br>
-            <select class="form-control">
-                <option value="selected" disable selected>-----</option>
-                {% for prof in profs %}
-                <option value="{{prof.id}}">{{prof.nome_prof}}</option>
-                {% endfor %}
-        
-            </select>
+            <input class="form-control" type="text" name="professor_disciplina" id="" placeholder="professor">
+            {{form.professor_disciplina}}
             <input class="btn btn-warning" type="submit" value="Cadastrar">
             <br>
         </form>

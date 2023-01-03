@@ -30,7 +30,8 @@
                             Você precisa fazer login para acessar o sistema
                         </div>
                     {% endif %}
-                    <form style="background: white;padding:40px; border: 2px solid whitesmoke; border-radius: 5%; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.664);" class="form-horizontal">
+                    <form  method="POST" action= {% url 'valida_login' %} style="background: white;padding:40px; border: 2px solid whitesmoke; border-radius: 5%; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.664);" class="form-horizontal">
+                        {% csrf_token %}
                         <h3 class="title text-center">Acesso Acadêmico</h3>
                         <hr>
                         <div class="form-group">

@@ -1,33 +1,49 @@
 from django.db import models
 from aluno.models import Aluno
 
-class Boletim(models.Model):
+class Boletim1Bimestre(models.Model):
     nome_aluno_boletim = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    nota1b1 = models.IntegerField()
-    nota2b1 = models.IntegerField()
-    nota3b1 = models.IntegerField()
-    bimestral1 = models.IntegerField()
-    media1 = models.IntegerField()
-
-    nota1b2 = models.IntegerField()
-    nota2b2 = models.IntegerField()
-    nota3b2 = models.IntegerField()
-    bimestral2 = models.IntegerField()
-    media2 = models.IntegerField()
-
-    nota1b3 = models.IntegerField()
-    nota2b3 = models.IntegerField()
-    nota3b3 = models.IntegerField()
-    bimestral3 = models.IntegerField()
-    media3 = models.IntegerField()
-
-    nota1b4 = models.IntegerField()
-    nota2b4 = models.IntegerField()
-    nota3b4 = models.IntegerField()
-    bimestral4 = models.IntegerField()
-    media4 = models.IntegerField()
-
-    mediafinal = models.IntegerField()
+    nota1b1 = models.CharField(max_length=3)
+    nota2b1 = models.CharField(max_length=3)
+    nota3b1 = models.CharField(max_length=3)
+    bimestral1 = models.CharField(max_length=3)
+    media1 = models.CharField(max_length=3)
 
     def __str__(self) -> str:
-        return str(self.nome_aluno_boletim)
+        return self.nome_aluno_boletim
+    
+
+class Boletim2Bimestre(models.Model):
+    nome_aluno_boletim = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    nota1b2 = models.CharField(max_length=3)
+    nota2b2 = models.CharField(max_length=3)
+    nota3b2 = models.CharField(max_length=3)
+    bimestral2 = models.CharField(max_length=3)
+    media2 = models.CharField(max_length=3)
+
+    def __str__(self) -> str:
+        return self.nome_aluno_boletim
+
+class Boletim3Bimestre(models.Model):
+    nome_aluno_boletim = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    nota1b3 = models.CharField(max_length=3)
+    nota2b3 = models.CharField(max_length=3)
+    nota3b3 = models.CharField(max_length=3)
+    bimestral3 = models.CharField(max_length=3)
+    media3 = models.CharField(max_length=3)
+
+    def __str__(self) -> str:
+        return self.nome_aluno_boletim
+
+class Boletim4Bimestre(models.Model):
+    nome_aluno_boletim = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    nota1b4 = models.CharField(max_length=3)
+    nota2b4 = models.CharField(max_length=3)
+    nota3b4 = models.CharField(max_length=3)
+    bimestral4 = models.CharField(max_length=3)
+    media4 = models.CharField(max_length=3)
+
+    mediafinal = models.CharField(max_length=3)
+
+    def __str__(self) -> str:
+        return self.nome_aluno_boletim

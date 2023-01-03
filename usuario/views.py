@@ -24,6 +24,7 @@ def valida_cadastro(request):
     senha = request.POST.get('senha')
     confirm_senha = request.POST.get('confirm-senha')
 
+    '''
     usuario = Usuario.objects.filter(email=email).filter(cpf=cpf)
     user = Users.objects.filter(email=email)
     if user.exists():
@@ -56,7 +57,7 @@ def valida_cadastro(request):
     if len(senha)<8:
         return redirect('/auth/cadastro/?status=9')
 
-    
+    '''
 
     try:
         user = Users.objects.create_user(username=cpf,email=email,password=senha,first_name=nome, departamento_user=departamento, contato_user=contato, rg_user=rg, cpf_user=cpf)

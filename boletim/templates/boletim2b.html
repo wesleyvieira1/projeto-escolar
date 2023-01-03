@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block 'titulo' %}Boletim -  Bimestre{% endblock 'titulo' %}
+{% block 'conteudo' %}
+<div class="container">
+    {% if status == '0'%}
+        <div class="alert alert-success" role="alert">
+            Notas Cadastradas
+        </div>
+    {% endif %}
+    <br>
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            A nota deve estar entre 0 e 100
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <form class="row g-10" method="POST" action= {% url 'boletim.valida-2' %}>{% csrf_token %}
+                <h1 class="text-dark" >Cadastro Boletim 2º B</h1>
+                <hr>
+                <div class="col-md-12 mb-5">
+                    <label for="">Nome Aluno</label>
+                    <select class="form-control" name="nome_aluno_boletim" id="">
+                        <option value="selected" disabled selected>Selecione o nome do Aluno</option>
+                        {% for alus in alu %}
+                        <option value="{{alus.id}}">{{alus.nome_aluno}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-12 p-30">
+                    <h4 class="p-2">2º Bimestre</h4>
+                    <hr>
+                    <input class="form-control" type="number" name="1nota2" id="" placeholder="1º Nota">
+                    <input class="form-control" type="number" name="2nota2" id="" placeholder="2º Nota">
+                    <input class="form-control" type="number" name="3nota2" id="" placeholder="3º Nota">
+                    <input class="form-control" type="number" name="b2" id="" placeholder="Bimestral">
+                    <input class="form-control" type="number" name="m2" id="" placeholder="Média">
+                </div>
+                <input class="btn btn-warning g-5" type="submit" value="Salvar">
+            </form>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock 'conteudo' %}

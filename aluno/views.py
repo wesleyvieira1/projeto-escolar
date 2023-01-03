@@ -22,6 +22,7 @@ def validaCadastroAluno(request):
     raca_aluno = request.POST.get('raca_aluno')
     sexo_aluno = request.POST.get('sexo_aluno')
 
+    '''
     aluno = Aluno.objects.filter(email_aluno=email_aluno).filter(cpf_aluno=cpf_aluno)
 
     if len(nome_aluno.strip())==0 or len(email_aluno.strip())==0:
@@ -47,7 +48,7 @@ def validaCadastroAluno(request):
 
     if '@' not in email_aluno:
         return redirect('/aluno/cadastro/?status=8')
-
+    '''
 
     try:
         alunos = Aluno(nome_aluno=nome_aluno, cpf_aluno=cpf_aluno,rg_aluno=rg_aluno, email_aluno=email_aluno, 
