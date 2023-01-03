@@ -70,63 +70,78 @@
         
     </div>
 
-    <div class="col-md-6">
-        <h1>Cadastro de Alunos</h1>
-        <hr>
+    <div class="col-md-12">
 
-        <form method="POST" action= {% url 'aluno.valida' %}>{% csrf_token %}
-            <label for="">Nome</label>
-            <input class="form-control" type="text" name="nome_aluno" id="" placeholder="Digite seu nome">
-            <br>
-            <label for="">Cpf</label>
-            <input class="form-control" type="number" name="cpf_aluno" id="" placeholder="Digite seu cpf">
-            <br>
-            <label for="">RG</label>
-            <input class="form-control" type="number" name="rg_aluno" id="" placeholder="Digite seu RG">
-            <br>
-            <label for="">Email</label>
-            <input class="form-control" type="email" name="email_aluno" id="" placeholder="Digite seu email">
-            <br>
-            <label for="">Endereço</label>
-            <input class="form-control" type="text" name="endereco_aluno" id="" placeholder="Digite seu endereço">
-            <br>
-            <label for="">Contato</label>
-            <input class="form-control" type="tel" name="contato_aluno" id="" placeholder="Digite seu telefone">
-            <br>
-            <label for="">Turno</label>
-            <select class="form-control" name="turno_aluno" id="">
-                <option disabled value="">Defina o turno</option>
-                <option value="Manhã">Manhã</option>
-                <option value="Tarde">Tarde</option>
-                <option value="Integral">Integral</option>
-            </select>
-            <br>
-            <label for="">Data Nascimento</label>
-            <input type="date" name="data_nascimento_aluno" id="">
-            <br>
-            <label for="">Data Entrada</label>
-            <input type="date" name="data_entrada_aluno" id="">
-            <br>
-            <label for="">Raça</label>
-            <select class="form-control" name="raca_aluno" id="">
-                <option selected disabled>Defina Raça</option>
-                <option value="Branca">Branca</option>
-                <option value="Preta">Preta</option>
-                <option value="Parda">Parda</option>
-                <option value="Não declarada">Não declarada</option>
-                <option value="Outra">Outra</option>
-            </select>
-            <br>
-            <label for="">Sexo</label>
-            <select class="form-control" name="sexo_aluno" id="">
-                <option selected disabled>Defina sexo</option>
-                <option value="Feminino">Feminino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Outro">Outro</option>
-                    
-            </select>
-            <input class="btn btn-warning" type="submit" value="Cadastrar">
-            <br>
+        <form class="g-10" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action= {% url 'aluno.valida' %}>{% csrf_token %}
+            <h1 class="text-dark" >Cadastro de Alunos</h1>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="text-dark" for="">Nome</label>
+                    <input class="form-control" type="text" name="nome_aluno" id="" placeholder="Digite seu nome">
+                </div>
+                <div class="col-md-6">
+                    <label class="text-dark" for="">Cpf</label>
+                    <input class="form-control" type="number" name="cpf_aluno" id="" placeholder="Digite seu cpf">
+                </div>
+                <div class="col-md-6">
+                    <label class="text-dark" for="">RG</label>
+                    <input class="form-control" type="number" name="rg_aluno" id="" placeholder="Digite seu RG">
+                </div>
+                <div class="col-md-6">
+                    <label class="text-dark" for="">Email</label>
+                    <input class="form-control" type="email" name="email_aluno" id="" placeholder="Digite seu email">
+                </div>
+                <div class="col-md-6">
+                    <label class="text-dark" for="">Endereço</label>
+                    <input class="form-control" type="text" name="endereco_aluno" id="" placeholder="Digite seu endereço">
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Contato</label>
+                    <input class="form-control" type="tel" name="contato_aluno" id="" placeholder="Digite seu telefone">
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Data Nascimento</label>
+                    <input class="form-control" type="date" name="data_nascimento_aluno" id="">
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Data Entrada</label>
+                    <input class="form-control" type="date" name="data_entrada_aluno" id="">
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Turno</label>
+                    <select class="form-control" name="turno_aluno" id="">
+                        <option disabled value="">Defina o turno</option>
+                        <option value="Manhã">Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Integral">Integral</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Raça</label>
+                    <select class="form-control" name="raca_aluno" id="">
+                        <option selected disabled>Defina Raça</option>
+                        <option value="Branca">Branca</option>
+                        <option value="Preta">Preta</option>
+                        <option value="Parda">Parda</option>
+                        <option value="Não declarada">Não declarada</option>
+                        <option value="Outra">Outra</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="text-dark" for="">Sexo</label>
+                    <select class="form-control" name="sexo_aluno" id="">
+                        <option selected disabled>Defina sexo</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                            
+                    </select>
+                </div>
+                <input class="btn btn-warning" type="submit" value="Cadastrar">
+            </div>
+            
+            
         </form>
     </div>
 

@@ -1,49 +1,58 @@
-{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'general/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'general/css/general.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/originals/36/79/4b/36794b86035707c44ea5adbba0604503.png">
 
-{% block 'titulo' %}Login{% endblock 'titulo' %}
-{% block 'conteudo' %}
+    <title>Entrar - SAAWEG</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
 
-<div class="container">
-    <br>
-    {% if status == '1'%}
-        <div class="alert alert-danger" role="alert">
-            Cpf ou senha inválidos
+            </div>
+            <div class="center col-md-4">
+                    {% if status == '1'%}
+                        <div class="alert alert-danger" role="alert">
+                            Cpf ou senha inválidos
+                        </div>
+                    {% endif %}
+                    {% if status == '2'%}
+                        <div class="alert alert-danger" role="alert">
+                            Você precisa fazer login para acessar o sistema
+                        </div>
+                    {% endif %}
+                    <form style="background: white;padding:40px; border: 2px solid whitesmoke; border-radius: 5%; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.664);" class="form-horizontal">
+                        <h3 class="title text-center">Acesso Acadêmico</h3>
+                        <hr>
+                        <div class="form-group">
+                            <span class="input-icon"><i class="bx bx-user"></i></span>
+                            <input class="form-control" name="cpf" type="number" placeholder="CPF">
+                        </div>
+                        <div class="form-group">
+                            <span class="input-icon"><i class="bx bx-lock-alt"></i></span>
+                            <input class="form-control" name="senha" type="password" placeholder="Senha">
+                        </div>
+                        <input class="btn signin" type="submit" value="Cadastrar">
+                    </form>
+            </div>
+            <div class="col-md-4">
+                
+            </div>
         </div>
-    {% endif %}
-    {% if status == '2'%}
-        <div class="alert alert-danger" role="alert">
-            Você precisa fazer login para acessar o sistema
-        </div>
-    {% endif %}
-    <div class="row">
-        <br>
-    <div class="col-md-3">
-        
     </div>
-
-    <div class="col-md-6">
-        <h1>Login</h1>
-        <hr>
-
-        <form method="POST" action= {% url 'valida_login' %}>
-            {% csrf_token %}
-            <label for="">Cpf</label>
-            <input class="form-control" type="number" name="cpf" id="" placeholder="Digite seu cpf">
-            <br>
-            <label for="">Senha</label>
-            <input class="form-control" type="password" name="senha" id="" placeholder="Digite sua senha">
-            <br>
-            <input class="btn btn-warning" type="submit" value="Entrar">
-            <br>
-        </form>
-    </div>
-
-    <div class="col-md-3">
-        
-    </div>
-    </div>
-</div>
-
-
-{% endblock 'conteudo' %}
-
+                    
+            
+    <script src="{% static 'general/js/base.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

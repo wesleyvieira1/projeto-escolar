@@ -1,30 +1,21 @@
-jQuery(function ($) {
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
 
-    $(".sidebar-dropdown > a").click(function() {
-  $(".sidebar-submenu").slideUp(200);
-  if (
-    $(this)
-      .parent()
-      .hasClass("active")
-  ) {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .parent()
-      .removeClass("active");
-  } else {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .next(".sidebar-submenu")
-      .slideDown(200);
-    $(this)
-      .parent()
-      .addClass("active");
-  }
+closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
 });
 
-$("#close-sidebar").click(function() {
-  $(".page-wrapper").removeClass("toggled");
+searchBtn.addEventListener("click", ()=>{ 
+    sidebar.classList.toggle("open");
+    menuBtnChange();
 });
-$("#show-sidebar").click(function() {
-  $(".page-wrapper").addClass("toggled");
-});
+
+function menuBtnChange() {
+if(sidebar.classList.contains("open")){
+    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+}else {
+    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+}
+}

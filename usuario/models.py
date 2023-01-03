@@ -14,3 +14,9 @@ class Usuario(models.Model):
 
     def __str__(self) -> str:
         return self.nome
+
+class Users(AbstractUser):
+    rg_user = models.CharField(max_length=7)
+    cpf_user = models.CharField(max_length=11)
+    contato_user = models.CharField(max_length=11)
+    departamento_user = models.CharField(max_length=50)

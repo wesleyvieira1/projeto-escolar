@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
-from .models import Usuario
+from .models import Usuario, Users
 from django.shortcuts import redirect
 from hashlib import sha256
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.contrib import auth
 
 
@@ -25,7 +25,7 @@ def valida_cadastro(request):
     confirm_senha = request.POST.get('confirm-senha')
 
     usuario = Usuario.objects.filter(email=email).filter(cpf=cpf)
-    user = User.objects.filter(email=email)
+    user = Users.objects.filter(email=email)
     if user.exists():
         return redirect('/auth/cadastro/?status=1')
 
@@ -59,8 +59,7 @@ def valida_cadastro(request):
     
 
     try:
-        senha = sha256(senha.encode()).hexdigest()
-        user = User.objects.create_user(username=cpf,email=email,password=senha,first_name=nome)
+        user = Users.objects.create_user(username=cpf,email=email,password=senha,first_name=nome, departamento_user=departamento, contato_user=contato, rg_user=rg, cpf_user=cpf)
         usuario = Usuario(nome=nome, cpf=cpf,rg=rg, email=email, endereco=endereco,contato=contato, departamento=departamento, senha=senha, confirm_senha=confirm_senha)
         usuario.save()
         user.save()
