@@ -1,15 +1,23 @@
 from django.shortcuts import render, redirect
 from .models import Turma
-from disciplina.models import Disciplina
+from academico.models import Disciplina
 from aluno.models import Aluno
+from .forms import turmaForm
+from django.views.generic import CreateView
 
 def cadastroTurma(request):
     status = request.GET.get('status')
-    dicipls = Disciplina.objects.all()
-    alus = Aluno.objects.all() 
-    return render(request, 'cadastro_turma.html', {'status':status, 'dicipls':dicipls,'alus':alus})
+    form = turmaForm()
+    return render(request, 'cadastro_turma.html', {'status':status, 'form':form})
 
-def validaCadastroTurma(request):
+class turmaCreateView(CreateView):
+    model = Turma
+    form_class = turmaForm
+    success_url = '/turma/cadastro/?status=0'
+    template_name = "cadastro_turma.html"
+
+
+'''def validaCadastroTurma(request):
     ano_turma = request.POST.get('ano_turma')
     horario_inicio_turma = request.POST.get('hrI')
     horario_fim_turma = request.POST.get('hrF')
@@ -29,4 +37,4 @@ def validaCadastroTurma(request):
         turma.save()
         return redirect('/turma/cadastro/?status=0')
     except:
-        return redirect('/turma/cadastro/?status=10')
+        return redirect('/turma/cadastro/?status=10')'''

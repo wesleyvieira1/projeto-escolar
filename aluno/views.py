@@ -2,25 +2,22 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
 from .models import Aluno
 from .forms import alunoForm
-from django.views.generic import DeleteView, UpdateView
+from django.views.generic import DeleteView, UpdateView, ListView
 
-#Aluno
-def cadastroAluno(request):
-    status = request.GET.get('status')
-    return render(request, 'cadastro_aluno.html', {'status':status})
-
-def validaCadastroAluno(request):
-    nome_aluno = request.POST.get('nome_aluno')
-    cpf_aluno = request.POST.get('cpf_aluno')
-    rg_aluno = request.POST.get('rg_aluno')
-    email_aluno = request.POST.get('email_aluno')
-    endereco_aluno = request.POST.get('endereco_aluno')
-    contato_aluno = request.POST.get('contato_aluno')
-    turno_aluno = request.POST.get('turno_aluno')
-    data_nascimento_aluno = request.POST.get('data_nascimento_aluno')
-    data_entrada_aluno = request.POST.get('data_entrada_aluno')
-    raca_aluno = request.POST.get('raca_aluno')
-    sexo_aluno = request.POST.get('sexo_aluno')
+def CadastroAluno(request):
+    if request.method=="POST":
+        form = alunoForm(request.POST)
+        if form.is_valid():
+            aluno = form.save(commit=False)
+            aluno.save()
+            return redirect('/aluno/cadastro/?status=0')
+        else:
+            return redirect('/aluno/cadastro/?status=10')
+    else:   
+        form = alunoForm()
+        status = request.GET.get('status')
+        context = {'form':form,'status':status}
+    return render(request, 'cadastro_aluno.html', context)
 
     '''
     aluno = Aluno.objects.filter(email_aluno=email_aluno).filter(cpf_aluno=cpf_aluno)
@@ -49,7 +46,7 @@ def validaCadastroAluno(request):
     if '@' not in email_aluno:
         return redirect('/aluno/cadastro/?status=8')
     '''
-
+    '''
     try:
         alunos = Aluno(nome_aluno=nome_aluno, cpf_aluno=cpf_aluno,rg_aluno=rg_aluno, email_aluno=email_aluno, 
         endereco_aluno=endereco_aluno,contato_aluno=contato_aluno, turno_aluno=turno_aluno,data_nascimento_aluno=data_nascimento_aluno,
@@ -58,18 +55,34 @@ def validaCadastroAluno(request):
         alunos.save()
         return redirect('/aluno/cadastro/?status=0')
     except:
-        return redirect('/aluno/cadastro/?status=10')
+        return redirect('/aluno/cadastro/?status=10')'''
 
     #return HttpResponse(f"{nome},{turno}")
+    '''nome_aluno = request.POST['nome_aluno']
+        cpf_aluno = request.POST['cpf_aluno']
+        rg_aluno = request.POST['rg_aluno']
+        email_aluno = request.POST['email_aluno']
+        endereco_aluno = request.POST['endereco_aluno']
+        contato_aluno = request.POST['contato_aluno']
+        turno_aluno = request.POST['turno_aluno']
+        data_nascimento_aluno = request.POST['data_nascimento_aluno']
+        data_entrada_aluno = request.POST['data_entrada_aluno']
+        raca_aluno = request.POST['raca_aluno']
+        sexo_aluno = request.POST['sexo_aluno']
+        turma_aluno  = request.POST['turma_aluno']'''
 
 def listagemAluno(request):
     alunos = Aluno.objects.all().order_by('nome_aluno')
     status = request.GET.get('status')
     return render(request, 'listagem_aluno.html', {'alunos':alunos,'status':status})
 
-def verAluno(request,id):
+'''def verAluno(request,id):
     alunos = Aluno.objects.get(id=id)
-    return render(request, 'visualizar_aluno.html',{'aluno': alunos})
+    return render(request, 'visualizar_aluno.html',{'aluno': alunos})'''
+
+class verAluno(ListView):
+    model = Aluno
+    template_name = "visualizar_aluno.html"
 
 class deleteAluno(DeleteView):
     model = Aluno

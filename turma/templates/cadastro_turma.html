@@ -73,72 +73,36 @@
     <br>
     <div class="col-md-12">
 
-        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action= {% url 'turma.valida' %}>{% csrf_token %}
-            <h1>Cadastro de Turmas</h1>
+        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action="">{% csrf_token %}
+            <h1 class="text-dark" >Cadastro de Turmas</h1>
             <hr>
             <div class="col-md-12">
-                <label for="">Ano</label>
-                <select class="form-control" name="ano_turma" id="">
-                    <option selected disabled>Defina o ano</option>
-                    <option value="1">1º ano</option>
-                    <option value="2">2º ano</option>
-                    <option value="3">3º ano</option>
-                    <option value="4">4º ano</option>
-                    <option value="5">5º ano</option>
-                    <option value="6">6º ano</option>
-                    <option value="7">7º ano</option>
-                    <option value="8">8º ano</option>
-                    <option value="9">9º ano</option>
-                </select>
+                <label class="text-dark" for="">Ano</label>
+                {{form.ano_turma}}
             </div>
             <br>
             <div class="col-md-6">
-                <label for="">Horário de Início</label>
-                <input class="form-control" type="time" name="hrI_turma" id="">
+                <label class="text-dark" for="">Horário de Início</label>
+                {{form.horario_inicio_turma}}
             </div>
             <br>
             <div class="col-md-6">
-                <label for="">Horário de Fim</label>
-                <input class="form-control" type="time" name="hrF_turma" id="">
+                <label class="text-dark" for="">Horário de Fim</label>
+                {{form.horario_fim_turma}}
             </div>
             <br>
             <div class="col-md-4">
-                <label for="">Etapa</label>
-                <select class="form-control" name="etapa_turma" id="">
-                    <option selected disabled>Defina a etapa</option>
-                    <option value="F1">Fundamental I</option>
-                    <option value="F2">Fundamental II</option>
-                    <option value="EM">Ensino Médio</option>
-                </select>
+                <label class="text-dark" for="">Etapa</label>
+                {{form.etapa_turma}}
             </div>
             <br>
             <div class="col-md-4">
-                <label for="">Disciplina</label>
-                <select class="form-control" name="disciplina_turma" id="">
-                    <option selected disabled>Defina a disciplina</option>
-                    {% for dis in dicipls  %}
-                    <option value="{{dis.id}}">{{dis.nome_disciplina}}</option>
-                      
-                    {% endfor %}
-                    
-                </select>
+                <label class="text-dark" for="">Disciplina</label>
+                {{form.disciplina_turma}}
             </div>
             <div class="col-md-4">
-                <label for="">Dia da Semana</label>
-                <select class="form-control" name="dia_turma" id="">
-                    <option selected disabled>Defina o dia</option>
-                    <option value="Segunda">Segunda</option>
-                    <option value="Terça">Terça</option>
-                    <option value="Quarta">Quarta</option>
-                    <option value="Quinta">Quinta</option>
-                    <option value="Sexta">Sexta</option>
-                </select>
-            </div>
-            <div class="col-md-12">
-                {% for alu in alus %}
-                <label for="">{{alu.nome_aluno}}</label>
-                <input type="checkbox" name="aluno_turma" id="" value="{{alu.id}}">
-                {% endfor %}
+                <label class="text-dark" for="">Dia da Semana</label>
+                {{form.dia_turma}}
             </div>
             <br>
             <input class="btn btn-warning" type="submit" value="Cadastrar">
