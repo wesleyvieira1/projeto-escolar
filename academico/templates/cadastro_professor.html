@@ -66,61 +66,62 @@
     <br>
     <div class="row">
         <br>
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     <br>
     <br>
-    <div class="col-md-12">
-
-        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action= {% url 'professor.valida' %}>{% csrf_token %}
-            <h1>Cadastro de Professores</h1>
-            <hr>
-            <div class="col-md-12">
-                <label for="">Nome</label>
+    <div style="background-color: white;margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;" class="col-md-8">
+        <h1 class="text-dark text-xl-center">Cadastro de Professor</h1>
+        <hr style="border-top: 5px solid red;">
+        <br>
+        <form class="row g-2" method="POST" action= {% url 'professor.valida' %}>{% csrf_token %}
+            
+            <div class="mt-3 col-md-12">
+                <label class="text-dark" for="">Nome</label>
                 <input class="form-control" type="text" name="nome_prof" id="" placeholder="Digite nome">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">Cpf</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Cpf</label>
                 <input class="form-control" type="number" name="cpf_prof" id="" placeholder="Digite cpf">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">RG</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">RG</label>
                 <input class="form-control" type="number" name="rg_prof" id="" placeholder="Digite RG">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">Email</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Email</label>
                 <input class="form-control" type="email" name="email_prof" id="" placeholder="Digite  email">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">Contato</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Contato</label>
                 <input class="form-control" type="tel" name="telefone_prof" id="" placeholder="Digite telefone">
             </div>
-            <div class="col-md-6">
-                <label for="">Endereço</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Endereço</label>
                 <input class="form-control" type="text" name="endereco_prof" id="" placeholder="Digite endereço">
             </div>
-            <div class="col-md-6">
-                <label for="">Formação</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Formação</label>
                 <input class="form-control" type="text" name="formacao_prof" id="" placeholder="Digite a formação">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">Data de Nascimento</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Data de Nascimento</label>
                 <input class="form-control" type="date" name="data_nascimento_prof" id="">
             </div>
             <br>
-            <div class="col-md-6">
-                <label for="">Data de Entrada</label>
+            <div class="mt-3 col-md-6">
+                <label class="text-dark" for="">Data de Entrada</label>
                 <input class="form-control" type="date" name="data_entrada_prof" id="">
             </div>
             <br>
-            <div class="col-md-4">
-                <label for="">Turno</label>
+            <div class="mt-3 col-md-4">
+                <label class="text-dark" for="">Turno</label>
                 <select class="form-control" name="turno_prof" id="">
                     <option selected disabled>Defina o turno</option>
                     <option value="Manhã">Manhã</option>
@@ -129,8 +130,8 @@
                 </select>
             </div>
 
-            <div class="col-md-4">
-                <label for="">Raça</label>
+            <div class="mt-3 col-md-4">
+                <label class="text-dark" for="">Raça</label>
                 <select class="form-control" name="raca_prof" id="">
                     <option selected disabled>Defina Raça</option>
                     <option value="Branca">Branca</option>
@@ -141,8 +142,8 @@
                 </select>
             </div>
             <br>
-            <div class="col-md-4">
-                <label for="">Sexo</label>
+            <div class="mt-3 col-md-4">
+                <label class="text-dark" for="">Sexo</label>
                 <select class="form-control" name="sexo_prof" id="">
                     <option selected disabled>Defina sexo</option>
                     <option value="Feminino">Feminino</option>
@@ -152,12 +153,12 @@
                 </select>
             </div>
             <br>
-            <input class="btn btn-warning" type="submit" value="Cadastrar">
+            <input style="margin:15px 15px 0 15px;width:100%;" class="btn btn-danger" type="submit" value="Cadastrar">
             <br>
         </form>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     </div>

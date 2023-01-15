@@ -5,7 +5,7 @@
 {% block 'conteudo' %}
     <br>
     <br>
-    <div class="container">
+    <div style="background-color: white; padding: 5%; border-radius: 20px;" class="container">
       {% if status == '0'%}
         <div class="alert alert-success" role="alert">
             Excluido com sucesso
@@ -26,13 +26,14 @@
             Não foi possível excluir
         </div>
       {% endif %}
-      <div class="row">
-        <div class="col-md-6">
+      <div style="background:white;" class="row">
+        <div style="background:white;" class="col-md-6">
           <h1 class="text-dark">Listagem de Alunos</h1>
         </div>
         <div style="text-align: right;" class="col-md-6">
           <button  class="btn btn-primary"><a style="text-decoration: none; color: white;" href="{% url 'aluno.cadastro' %}">Adicionar Aluno</a></button>
         </div>
+        <hr style="border-top: 5px solid red;">
       </div>
       
         <hr>
@@ -41,7 +42,7 @@
 
             </div>
             <div class="col-md-12">
-                <table class="table">
+                <table class="table table">
                     <thead>
                       <tr>
                         <th scope="col">Nome</th>

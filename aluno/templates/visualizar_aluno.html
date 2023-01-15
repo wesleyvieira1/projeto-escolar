@@ -15,7 +15,11 @@
     <h6>Telefone:</h6><p>{{aluno.contato_aluno}}</p>
     <h6>Endereço:</h6><p>{{aluno.endereco_aluno}}</p>
     <h6>Turno:</h6><p>{{aluno.turno_aluno}}</p>
-    <h6>Turmas:</h6><p>{{aluno.turma_aluno}}</p>
+    
+    {% endfor %}
+    
+    {% for turma in obj.turma_aluno.all %}
+    <h6>Turmas:</h6><p>{{turma}}</p>
     {% endfor %}
     
 </div>

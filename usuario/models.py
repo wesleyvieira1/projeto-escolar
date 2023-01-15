@@ -11,6 +11,7 @@ class Usuario(models.Model):
     departamento = models.CharField(max_length=50)
     senha = models.CharField(max_length=8)
     confirm_senha = models.CharField(max_length=8)
+    img_user = models.ImageField(upload_to='usuario_profile', null=True, blank=True)
 
     def __str__(self) -> str:
         return self.nome
@@ -20,3 +21,4 @@ class Users(AbstractUser):
     cpf_user = models.CharField(max_length=11)
     contato_user = models.CharField(max_length=11)
     departamento_user = models.CharField(max_length=50)
+    img_user = models.ImageField(upload_to='user_profile', null=True, blank=True)

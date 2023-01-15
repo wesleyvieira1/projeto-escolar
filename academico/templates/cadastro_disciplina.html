@@ -70,9 +70,11 @@
     </div>
     <br>
     <br>
-    <div class="col-md-12">
-
-        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action="">{% csrf_token %}
+    <div style="background-color: white;margin-top:10%;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;" class="col-md-6">
+        <h1 class="text-dark text-xl-center">Cadastro de Disciplina</h1>
+        <hr style="border-top: 5px solid red;">
+        <br>
+        <form class="row g-2" method="POST" action="">{% csrf_token %}
             <div class="col-md-12">
                 <label class="text-dark" for="">Nome da disciplina</label>
                 {{form.nome_disciplina}}
@@ -81,9 +83,11 @@
                 <label class="text-dark" for="">Nome Professor</label>
                 {{form.professor_disciplina}}
             </div>
-            <input class="btn btn-warning" type="submit" value="Cadastrar">
             
+            <input style="margin:15px 15px 0 15px;width:100%;" class="btn btn-danger" type="submit" value="Cadastrar">
+        
         </form>
+        
     </div>
 
     <div class="col-md-3">

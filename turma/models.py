@@ -12,4 +12,4 @@ class Turma(models.Model):
     
 
     def __str__(self) -> str:
-        return f'{self.ano_turma} - {self.etapa_turma} - {self.disciplina_turma}'
+        return f'{self.ano_turma} - {self.etapa_turma} | {str(self.disciplina_turma)}'

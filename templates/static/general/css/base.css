@@ -279,8 +279,8 @@
 }
 
 .bg-c-lite-green {
-      background: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#d30121));
-  background: linear-gradient(to right, #0044ff, #000a99);
+      background: -webkit-gradient(linear, left top, right top, from(#0004ff), to(#0501d3));
+  background: linear-gradient(to right, #bd0404, #bd0404);
 }
 
 .user-profile {
@@ -297,7 +297,7 @@
 
 
 .img-radius{
-  border-radius: 5px;
+  border-radius: 100px;
   width:200px;
 }
 
@@ -386,5 +386,62 @@ p {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+.card-counter{
+  display:flex;
+  align-items:center;
+  margin: 5px;
+  padding: 20px 10px;
+  background-color: #bd0404;
+  height: 100px;
+  border-radius: 5px;
+  transition: .3s linear all;
+}
 
+.card-counter:hover{
+  transform: scale(1.1);
+  transition: .3s linear all;
+}
+
+.card-counter.primary{
+  background-color: #007bff;
+  color: #FFF;
+}
+
+.card-counter.danger{
+  background-color: #ef5350;
+  color: #FFF;
+}  
+
+.card-counter.success{
+  background-color: #66bb6a;
+  color: #FFF;
+}  
+
+.card-counter.info{
+  background-color: #26c6da;
+  color: #FFF;
+}  
+
+.card-counter i{
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+.card-counter .count-numbers{
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 32px;
+  display: block;
+}
+
+.card-counter .count-name{
+  position: absolute;
+  right: 35px;
+  top: 65px;
+  text-transform: capitalize;
+  opacity: 0.8;
+  display: block;
+  font-size: 18px;
+}
 

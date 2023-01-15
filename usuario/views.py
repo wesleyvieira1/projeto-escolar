@@ -20,6 +20,7 @@ def valida_cadastro(request):
     email = request.POST.get('email')
     endereco = request.POST.get('endereco')
     contato = request.POST.get('telefone')
+    img_user = request.POST.get('usuario_profile')
     departamento = request.POST.get('departamento')
     senha = request.POST.get('senha')
     confirm_senha = request.POST.get('confirm-senha')
@@ -60,8 +61,8 @@ def valida_cadastro(request):
     '''
 
     try:
-        user = Users.objects.create_user(username=cpf,email=email,password=senha,first_name=nome, departamento_user=departamento, contato_user=contato, rg_user=rg, cpf_user=cpf)
-        usuario = Usuario(nome=nome, cpf=cpf,rg=rg, email=email, endereco=endereco,contato=contato, departamento=departamento, senha=senha, confirm_senha=confirm_senha)
+        user = Users.objects.create_user(username=cpf,email=email,password=senha,first_name=nome, departamento_user=departamento, contato_user=contato, rg_user=rg, cpf_user=cpf, img_user=img_user)
+        usuario = Usuario(nome=nome, cpf=cpf,rg=rg, email=email, endereco=endereco,contato=contato, departamento=departamento, senha=senha, confirm_senha=confirm_senha, img_user=img_user)
         usuario.save()
         user.save()
         return redirect('/auth/cadastro/?status=0')
