@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'boletim',
     'aluno',
     'turma',
-    'academico'
+    'academico',
+    'mensalidade'
 ]
 
 MIDDLEWARE = [

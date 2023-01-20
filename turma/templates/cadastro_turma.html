@@ -66,51 +66,57 @@
     <br>
     <div class="row">
         <br>
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     <br>
     <br>
-    <div class="col-md-12">
-
-        <form class="row g-2" style="margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;"method="POST" action="">{% csrf_token %}
-            <h1 class="text-dark" >Cadastro de Turmas</h1>
-            <hr>
-            <div class="col-md-12">
+    <div style="background-color: white;margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;margin-top:50px;" class="col-md-8">
+        <!--<div style="text-align: right;" class="col-md-6">
+            <button  class="btn btn-primary"><a style="text-decoration: none; color: white;" href="{% url 'anexo.cadastro' %}">Adicionar Anexo</a></button>
+        </div>
+        <div style="text-align: right;" class="col-md-6">
+            <button  class="btn btn-primary"><a style="text-decoration: none; color: white;" href="{% url 'chamada.cadastro' %}">Chamada</a></button>
+        </div>-->
+        <h1 class="text-dark text-xl-center">Cadastro de Turmas</h1>
+        <hr style="border-top: 5px solid red;">
+        <br>
+        <form class="row g-2" method="POST" action="">{% csrf_token %}
+            <div class="col-md-12 mt-3">
                 <label class="text-dark" for="">Ano</label>
                 {{form.ano_turma}}
             </div>
             <br>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
                 <label class="text-dark" for="">Horário de Início</label>
                 {{form.horario_inicio_turma}}
             </div>
             <br>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
                 <label class="text-dark" for="">Horário de Fim</label>
                 {{form.horario_fim_turma}}
             </div>
             <br>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <label class="text-dark" for="">Etapa</label>
                 {{form.etapa_turma}}
             </div>
             <br>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <label class="text-dark" for="">Disciplina</label>
                 {{form.disciplina_turma}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <label class="text-dark" for="">Dia da Semana</label>
                 {{form.dia_turma}}
             </div>
             <br>
-            <input class="btn btn-warning" type="submit" value="Cadastrar">
+            <input style="margin:25px 15px 0 15px;width:100%;" class="btn btn-danger" type="submit" value="Cadastrar">
             <br>
         </form>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     </div>

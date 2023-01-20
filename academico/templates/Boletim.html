@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}Boletim{% endblock 'titulo' %}
+
+{% block 'conteudo' %}
+
+<div class="container">
+    {% if status == '0'%}
+        <div class="alert alert-success" role="alert">
+            Cadastro feito com sucesso
+        </div>
+    {% endif %}
+    
+    {% if status == '1'%}
+        <div class="alert alert-danger" role="alert">
+            Nome ou email não podem estar vazio
+        </div>
+    {% endif %}
+    {% if status == '2'%}
+        <div class="alert alert-danger" role="alert">
+            Usuário já está cadastrado
+        </div>
+    {% endif %}
+    
+    {% if status == '3'%}
+        <div class="alert alert-danger" role="alert">
+            O nome deve ter mais de 3 digitos
+        </div>
+    {% endif %}
+    
+    {% if status == '4'%}
+        <div class="alert alert-danger" role="alert">
+            O nome não pode ter números
+        </div>
+    {% endif %}
+    {% if status == '5'%}
+        <div class="alert alert-danger" role="alert">
+            Cpf deve ter 11 digitos
+        </div>
+    {% endif %}
+    {% if status == '6'%}
+        <div class="alert alert-danger" role="alert">
+            Rg deve ter 7 digitos
+        </div>
+    {% endif %}
+    {% if status == '7'%}
+        <div class="alert alert-danger" role="alert">
+            Endereço deve ter no mínimo 5 digitos
+        </div>
+    {% endif %}
+    {% if status == '8'%}
+        <div class="alert alert-danger" role="alert">
+            O email deve possuir @
+        </div>
+    {% endif %}
+    {% if status == '9'%}
+        <div class="alert alert-danger" role="alert">
+            Senha deve ter mais de 8 digitos
+        </div>
+    {% endif %}
+    {% if status == '10'%}
+        <div class="alert alert-danger" role="alert">
+            Erro no sistema
+        </div>
+    {% endif %}
+    <br>
+    <div class="row">
+        <br>
+    <div class="col-md-2">
+        
+    </div>
+    <br>
+    <br>
+    <div style="background-color: white;margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;" class="col-md-8">
+        <h1 class="text-dark text-xl-center">Boletim</h1>
+        <hr style="border-top: 5px solid red;">
+        <br>
+        <div class="row g-2">
+            <div class="col-md-4">
+                <table class="table table-bordered text-dark g-2">
+                    <thead>
+                        <tr class="table-danger">
+                            <td colspan="1" style="color:red;font-weight: bold;" class="text-xl-center">Aluno</th>
+                            <td colspan="5">User test</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <th>Disciplina</td>
+                            <th>1º B</td>
+                            <th>2º B</td>
+                            <th>3º B</td>
+                            <th>4º B</td>
+                            <th>MF</td> 
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Português</td>
+                            <td>93</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Matemática</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Física</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Biologia</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Química</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ed. Física</td>
+                            <td>100</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Inglês</td>
+                            <td>95</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>História</td>
+                            <td>85</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Geografia</td>
+                            <td>85</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Artes</td>
+                            <td>100</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Filosofia</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sociologia</td>
+                            <td><svg style='color:blue'xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                              </svg></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-left: 16.5%;" class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-danger">
+                            <th colspan="2">Português - 1 Bimestre</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1º Nota</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2º Nota</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">3º Nota</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Bimestral</td>
+                            <td>-</td>
+                        </tr>
+                        <tr scope="row">
+                            <td>Média</td>
+                            <td>93</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        
+    </div>
+    </div>
+</div>
+
+
+{% endblock 'conteudo' %}

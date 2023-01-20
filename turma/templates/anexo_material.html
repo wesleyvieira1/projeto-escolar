@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
-{% block 'titulo' %}Cadastro de Disciplina{% endblock 'titulo' %}
+{% block 'titulo' %}Anexo de Material{% endblock 'titulo' %}
 
 {% block 'conteudo' %}
+
 <div class="container">
     {% if status == '0'%}
         <div class="alert alert-success" role="alert">
@@ -65,32 +66,38 @@
     <br>
     <div class="row">
         <br>
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     <br>
     <br>
-    <div style="background-color: white;margin-top:10%;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;" class="col-md-6">
-        <h1 class="text-dark text-xl-center">Cadastro de Disciplina</h1>
+    <div style="background-color: white;margin: auto;width: 70%; padding: 2%; border: 2px solid whitesmoke; border-radius: 2%; margin-bottom: 2%;margin-top:50px;" class="col-md-8">
+        <h1 class="text-dark text-xl-center">Anexo de Material</h1>
         <hr style="border-top: 5px solid red;">
         <br>
-        <form class="row g-2" method="POST" action="">{% csrf_token %}
-            <div class="col-md-12">
-                <label class="text-dark" for="">Nome da disciplina</label>
-                {{form.nome_disciplina}}
-            </div>
-            <div class="col-md-12">
-                <label class="text-dark" for="">Nome Professor</label>
-                {{form.professor_disciplina}}
-            </div>
+        <form class="row g-2 text-dark" method="POST" action="">{% csrf_token %}
             
-            <input style="margin:25px 15px 0 15px;width:100%;" class="btn btn-danger" type="submit" value="Cadastrar">
-        
+            <div class="col-md-12">
+                <label for="">Turma</label>
+                <select class="form-control" name="turma-anexo" id="">
+                    <option value="" disabled selected>Selecione a turma</option>
+                </select>
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for="">Título</label>
+                <input class="form-control"type="text" name="titulo-anexo" id="" placeholder="Digite o título">
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for="">Arquivo</label>
+                <input class="form-control" type="file" name="arquivo-anexo" id="">
+            </div>
+            <br>
+            <input style="margin:25px 15px 0 15px;width:100%;" class="btn btn-danger" type="submit" value="Anexar">
+            <br>
         </form>
-        
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
         
     </div>
     </div>

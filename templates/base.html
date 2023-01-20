@@ -66,14 +66,14 @@
           <span class="tooltip">Disciplinas</span>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'mensalidade.cadastro' %}">
             <i class='bx bx-money'></i>
             <span class="links_name">Mensalidades</span>
           </a>
           <span class="tooltip">Mensalidades</span>
         </li>
         <li>
-          <a href="{% url 'boletim.cadastro' %}">
+          <a href="{% url 'boletim' %}">
             <i class='bx bx-money'></i>
             <span class="links_name">Boletins</span>
           </a>
@@ -100,7 +100,7 @@
                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                 <div class="card-block text-center text-white">
                                     <div class="m-b-25">
-                                        <img src="{{user.img_user.url}}" class="img-radius" alt="User-Profile-Image">
+                                        <img src="https://www.publicdomainpictures.net/pictures/270000/nahled/avatar-people-person-business-u.jpg" class="img-radius" alt="User-Profile-Image">
                                     </div>
                                     <h6 class="f-w-600">{{user.first_name}}</h6>
                                     <p>{{user.departamento_user}}</p>

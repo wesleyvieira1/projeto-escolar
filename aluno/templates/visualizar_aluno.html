@@ -1,27 +1,84 @@
 {% extends 'base.html' %}
 
-{% block 'titulo' %}{{aluno.nome_aluno}}{% endblock 'titulo' %}
+{% block 'titulo' %}Listagem de Alunos{% endblock 'titulo' %}
 
 {% block 'conteudo' %}
-<div class="text-dark container">
     <br>
-    <h5>Dados do Aluno</h5>
-    <hr>
-    {% for aluno in object_list %}
-    <h6>Nome:</h6><p>{{aluno.nome_aluno}}</p>
-    <h6>Rg:</h6><p>{{aluno.rg_aluno}}</p>
-    <h6>CPF:</h6><p>{{aluno.cpf_aluno}}</p>
-    <h6>Email:</h6><p>{{aluno.email_aluno}}</p>
-    <h6>Telefone:</h6><p>{{aluno.contato_aluno}}</p>
-    <h6>Endereço:</h6><p>{{aluno.endereco_aluno}}</p>
-    <h6>Turno:</h6><p>{{aluno.turno_aluno}}</p>
-    
-    {% endfor %}
-    
-    {% for turma in obj.turma_aluno.all %}
-    <h6>Turmas:</h6><p>{{turma}}</p>
-    {% endfor %}
-    
-</div>
+    <br>
+    <div class="container">
+      {% if status == '0'%}
+        <div class="alert alert-success" role="alert">
+            Excluido com sucesso
+        </div>
+      {% endif %}
+      {% if status == '1'%}
+        <div class="alert alert-success" role="alert">
+            Editado com sucesso
+        </div>
+      {% endif %}
+      {% if status == '5'%}
+        <div class="alert alert-danger" role="alert">
+            Erro já existe
+        </div>
+      {% endif %}
+      {% if status == '10'%}
+        <div class="alert alert-danger" role="alert">
+            Não foi possível excluir
+        </div>
+      {% endif %}
+      <div>
+      </div>
+      
+        <div class="row">
+            <div class="col-md-2">
 
+            </div>
+            <div class="col-md-8" style="background-color: white; border-radius: 5%; padding: 5%;">
+                <div>
+                    <h1 class="text-dark">Dados Aluno</h1>
+                </div>
+                <hr style="border-top: 5px solid red;">
+                <table class="table table">
+                    <thead>
+                    </thead>
+                    <tbody>
+                        {% for aluno in object_list %}
+                        <tr>
+                            <th scope="row"><i class='bx bx-user-circle' style="margin-right: 5px;"></i>Nome</th>
+                            <td>{{aluno.nome_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-id-card' style="margin-right: 5px;"></i>RG</th>
+                            <td>{{aluno.rg_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-credit-card-front' style="margin-right: 5px;"></i>CPF</th>
+                            <td>{{aluno.cpf_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-envelope' style="margin-right: 5px;"></i>Email</th>
+                            <td>{{aluno.email_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-phone' style="margin-right: 5px;"></i>Contato</th>
+                            <td>{{aluno.contato_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-map-pin' style="margin-right: 5px;"></i>Endereço</th>
+                            <td>{{aluno.endereco_aluno}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class='bx bx-sun' style="margin-right: 5px;"></i>Turno</th>
+                            <td>{{aluno.turno_aluno}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                  </table>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
 {% endblock 'conteudo' %}

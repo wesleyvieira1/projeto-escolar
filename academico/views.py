@@ -10,6 +10,10 @@ def cadastroProfessor(request):
     status = request.GET.get('status')
     return render(request, 'cadastro_professor.html', {'status':status})
 
+def cadastroBoletim(request):
+    status = request.GET.get('status')
+    return render(request, 'Boletim.html', {'status':status})
+
 def validaCadastroProfessor(request):
     nome = request.POST.get('nome_prof')
     cpf = request.POST.get('cpf_prof')

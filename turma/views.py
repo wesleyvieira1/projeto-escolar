@@ -10,6 +10,14 @@ def cadastroTurma(request):
     form = turmaForm()
     return render(request, 'cadastro_turma.html', {'status':status, 'form':form})
 
+def cadastroAnexo(request):
+    status = request.GET.get('status')
+    return render(request, 'anexo_material.html', {'status':status})
+
+def cadastroChamada(request):
+    status = request.GET.get('status')
+    return render(request, 'chamada.html', {'status':status})
+
 class turmaCreateView(CreateView):
     model = Turma
     form_class = turmaForm
