@@ -9,6 +9,7 @@ urlpatterns = [
     path('cadastro/', views.cadastroProfessor, name='professor.cadastro'),
     path('valida_cadastro/',views.validaCadastroProfessor, name='professor.valida'),
     path('listagem/', views.listagemProfessor, name='professor.listagem'),
-    path('boletim/',views.cadastroBoletim, name='boletim')
+    path('boletim/',views.cadastroBoletim, name='boletim'),
+     path('mensagem/',views.cadastroMensagem, name='mensagem')
 
 ]

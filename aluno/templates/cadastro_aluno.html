@@ -80,11 +80,17 @@
                     <label class="text-dark" for="">Nome</label>
                     {{form.nome_aluno}}
                 </div>
-                <div class="mt-3 col-md-6">
+                <div class="mt-3 col-md-4">
+                    <label class="text-dark" for="">Usuário</label>
+                    <select class="form-control" name="aluno-mensalidade" id="">
+                        <option value="" selected disabled>Selecione o Usuário</option>
+                    </select>
+                </div>
+                <div class="mt-3 col-md-4">
                     <label class="text-dark" for="">Cpf</label>
                     {{form.cpf_aluno}}
                 </div>
-                <div class="mt-3 col-md-6">
+                <div class="mt-3 col-md-4">
                     <label class="text-dark" for="">RG</label>
                     {{form.rg_aluno}}
                 </div>

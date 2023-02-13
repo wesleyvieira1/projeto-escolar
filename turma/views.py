@@ -18,6 +18,14 @@ def cadastroChamada(request):
     status = request.GET.get('status')
     return render(request, 'chamada.html', {'status':status})
 
+def Listagem(request):
+    status = request.GET.get('status')
+    return render(request, 'listagem_turma.html', {'status':status})
+
+def registro(request):
+    status = request.GET.get('status')
+    return render(request, 'registro_aula.html', {'status':status})
+
 class turmaCreateView(CreateView):
     model = Turma
     form_class = turmaForm

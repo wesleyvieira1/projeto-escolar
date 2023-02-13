@@ -42,10 +42,10 @@ def valida_cadastro(request):
 
     if nome.isdigit()==True:
         return redirect('/auth/cadastro/?status=4')
-
+    '''
     if len(cpf)<11:
         return redirect('/auth/cadastro/?status=5')
-    
+    '''
     if len(rg)<7:
         return redirect('/auth/cadastro/?status=6')
 
